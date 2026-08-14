@@ -1,0 +1,62 @@
+{
+  "model_name": "HuggingFaceTB/SmolLM2-135M-Instruct",
+  "seeds": 12,
+  "seed_start": 41001,
+  "seed_stride": 97,
+  "external_zorp": 64,
+  "external_mira": 64,
+  "within_adapt": 32,
+  "cross_adapt": 64,
+  "within_eval": 32,
+  "cross_eval": 64,
+  "mira_eval": 96,
+  "external_epochs": 5,
+  "adapt_steps": 28,
+  "candidate_budget": 48,
+  "attempts_per_candidate": 4,
+  "batch_size": 16,
+  "external_lr": 0.0005,
+  "adapt_lr": 0.0003,
+  "lora_rank": 8,
+  "lora_alpha": 16,
+  "lora_dropout": 0.0,
+  "anchor_fraction": 0.25,
+  "sampling_temperature": 1.0,
+  "max_length": 64,
+  "bootstrap_samples": 10000,
+  "device": "cpu",
+  "model_revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+  "python": "3.12.13 | packaged by Anaconda, Inc. | (main, Jul  9 2026, 14:26:47) [MSC v.1942 64 bit (AMD64)]",
+  "torch": "2.13.0+cpu",
+  "labels": [
+    " A",
+    " B",
+    " C",
+    " D"
+  ],
+  "label_ids": [
+    330,
+    389,
+    340,
+    422
+  ],
+  "lora_targets": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj"
+  ],
+  "primary_hypotheses": 6,
+  "conditions": [
+    "no_update",
+    "replay",
+    "unchecked_hard",
+    "validated_uniform",
+    "validated_hard",
+    "validated_dream",
+    "validated_hard_anchor"
+  ]
+}

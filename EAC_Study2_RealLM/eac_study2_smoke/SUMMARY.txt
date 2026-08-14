@@ -1,0 +1,14 @@
+EAC Study 2: Real pretrained LM + LoRA + programmatic verifier
+Model: HuggingFaceTB/SmolLM2-135M-Instruct
+Seeds: 1
+Device: cpu
+
+                      hypothesis    metric             treatment           control  treatment_mean  control_mean  mean_diff  ci_low  ci_high   t  p_one_sided  dz  wilcoxon_p  wins  ties  losses  sign_p  holm_p  reject_h0_0.05
+     R1_validated_hard_vs_replay  zorp_acc        validated_hard            replay           0.250      0.178571   0.071429     NaN      NaN NaN          NaN NaN         0.5     1     0       0     0.5     0.0            True
+      R2_validation_vs_unchecked  zorp_acc        validated_hard    unchecked_hard           0.250      0.178571   0.071429     NaN      NaN NaN          NaN NaN         0.5     1     0       0     0.5     0.0            True
+ R3_endogenous_gain_vs_no_update  zorp_acc        validated_hard         no_update           0.250      0.178571   0.071429     NaN      NaN NaN          NaN NaN         0.5     1     0       0     0.5     0.0            True
+R4_dream_recombination_vs_replay cross_acc       validated_dream            replay           0.125      0.250000  -0.125000     NaN      NaN NaN          NaN NaN         1.0     0     0       1     1.0     0.0            True
+             R5_anchor_retention  mira_acc validated_hard_anchor    validated_hard           0.250      0.250000   0.000000     NaN      NaN NaN          NaN NaN         1.0     0     1       0     1.0     0.0            True
+    R6_hard_selection_vs_uniform  zorp_acc        validated_hard validated_uniform           0.250      0.178571   0.071429     NaN      NaN NaN          NaN NaN         0.5     1     0       0     0.5     0.0            True
+
+Interpretation guardrail: verifier pass/fail is evaluative information. Do not describe the study as learning with literally zero new information.

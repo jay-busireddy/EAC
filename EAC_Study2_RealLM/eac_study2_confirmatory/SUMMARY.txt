@@ -1,0 +1,14 @@
+EAC Study 2: Real pretrained LM + LoRA + programmatic verifier
+Model: HuggingFaceTB/SmolLM2-135M-Instruct
+Seeds: 12
+Device: cpu
+
+                      hypothesis    metric             treatment           control  treatment_mean  control_mean     mean_diff    ci_low   ci_high             t  p_one_sided            dz  wilcoxon_p  wins  ties  losses   sign_p   holm_p  reject_h0_0.05
+     R1_validated_hard_vs_replay  zorp_acc        validated_hard            replay        0.249132      0.251736 -2.604167e-03 -0.031949  0.026741 -1.953210e-01     0.575649 -5.638431e-02    0.646484     3     3       6 0.910156 1.000000           False
+      R2_validation_vs_unchecked  zorp_acc        validated_hard    unchecked_hard        0.249132      0.220486  2.864583e-02 -0.008379  0.065671  1.702875e+00     0.058322  4.915776e-01    0.112305     6     2       4 0.376953 0.349933           False
+ R3_endogenous_gain_vs_no_update  zorp_acc        validated_hard         no_update        0.249132      0.229167  1.996528e-02 -0.025928  0.065859  9.575025e-01     0.179443  2.764072e-01    0.384766     4     2       6 0.828125 0.897213           False
+R4_dream_recombination_vs_replay cross_acc       validated_dream            replay        0.225260      0.289062 -6.380208e-02 -0.099082 -0.028522 -3.980381e+00     0.998921 -1.149037e+00    0.998047     1     1      10 0.999512 1.000000           False
+             R5_anchor_retention  mira_acc validated_hard_anchor    validated_hard        0.251736      0.251736  9.251859e-18 -0.040209  0.040209  5.064355e-16     0.500000  1.461953e-16    0.625977     4     1       7 0.886719 1.000000           False
+    R6_hard_selection_vs_uniform  zorp_acc        validated_hard validated_uniform        0.249132      0.235243  1.388889e-02 -0.030851  0.058629  6.832595e-01     0.254289  1.972400e-01    0.250977     7     1       4 0.274414 1.000000           False
+
+Interpretation guardrail: verifier pass/fail is evaluative information. Do not describe the study as learning with literally zero new information.

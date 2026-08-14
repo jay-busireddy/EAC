@@ -1,0 +1,9 @@
+numpy>=1.26
+pandas>=2.2
+scipy>=1.12
+matplotlib>=3.8
+torch>=2.2
+transformers>=4.46
+peft>=0.13
+accelerate>=1.0
+safetensors>=0.4
