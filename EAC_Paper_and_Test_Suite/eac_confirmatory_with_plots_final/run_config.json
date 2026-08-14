@@ -1,0 +1,10 @@
+{
+  "seeds": 40,
+  "base_seed": 23001,
+  "steps": 250,
+  "thought_steps": 180,
+  "memory_n": 120,
+  "dim": 12,
+  "lora_epochs": 35,
+  "device": "cpu"
+}
