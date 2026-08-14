@@ -1,0 +1,16 @@
+EAC Study 3: competence-gated real-LM + function-approximated thought selection + remembering capacity
+
+Real-LM adequacy gate: 0/1 seeds passed; minimum for confirmatory interpretation = 1.
+Verifier uses exactly ONE model proposal per candidate and returns pass/fail only; no corrected label enters EAC.
+
+                                       hypothesis family               metric           treatment             control  treatment_mean  control_mean  gate_pass_seeds  n  mean_diff    ci_low  ci_high         t  p_one_sided        dz  wilcoxon_p  wins  ties  losses  sign_p  family_holm_p  global_holm_p          decision
+                       B1_large_vs_small_capacity memory          path_recall     large_selective     small_selective        0.333333      0.000000              NaN  4   0.333333  0.225064 0.441602  9.797959     0.001130  4.898979      0.0625     4     0       0  0.0625       0.004519       0.004519         REJECT_H0
+              B2_large_vs_small_capacity_with_EAC memory          path_recall large_selective_eac small_selective_eac        0.291667      0.062500              NaN  4   0.229167 -0.102338 0.560671  2.200000     0.057586  1.100000      0.1250     3     1       0  0.1250       0.115172       0.115172 FAIL_TO_REJECT_H0
+              B3_selective_vs_random_large_memory memory       query_accuracy     large_selective        large_random        0.635417      0.572917              NaN  4   0.062500 -0.003801 0.128801  3.000000     0.028834  1.500000      0.0625     4     0       0  0.0625       0.086503       0.086503 FAIL_TO_REJECT_H0
+B4_capacity_enables_more_successful_thought_paths memory thought_success_rate large_selective_eac small_selective_eac        0.025000      0.037500              NaN  4  -0.012500 -0.112612 0.087612 -0.397360     0.641157 -0.198680      0.7500     1     2       1  0.7500       0.641157       0.641157 FAIL_TO_REJECT_H0
+
+Interpretation guardrails:
+- Real-LM primary claims are non-interpretable if the prespecified source-competence gate fails.
+- Function approximation is tested as a thought-selection policy, not as proof that cognition must be neural or stochastic.
+- Memory capacity is evaluated under fixed retrieval bandwidth; raw storage size is not equated with intelligence.
+- Verifier pass/fail is evaluative information; do not claim literally zero new information.

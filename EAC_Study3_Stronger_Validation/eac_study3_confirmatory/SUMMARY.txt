@@ -1,0 +1,22 @@
+EAC Study 3: competence-gated real-LM + function-approximated thought selection + remembering capacity
+
+Real-LM adequacy gate: 12/12 seeds passed; minimum for confirmatory interpretation = 10.
+Verifier uses exactly ONE model proposal per candidate and returns pass/fail only; no corrected label enters EAC.
+
+                                       hypothesis  family               metric             treatment             control  treatment_mean  control_mean  gate_pass_seeds  n  mean_diff    ci_low   ci_high         t  p_one_sided        dz   wilcoxon_p  wins  ties  losses       sign_p  family_holm_p  global_holm_p          decision
+                      A1_validated_hard_vs_replay real_lm             zorp_acc        validated_hard              replay        0.819940      0.958333             12.0 12  -0.138393 -0.234681 -0.042105 -3.163425 9.954881e-01 -0.913202 9.975586e-01     2     1       9 9.941406e-01   1.000000e+00   1.000000e+00 FAIL_TO_REJECT_H0
+                       A2_validation_vs_unchecked real_lm             zorp_acc        validated_hard      unchecked_hard        0.819940      0.769345             12.0 12   0.050595 -0.002585  0.103776  2.093998 3.011135e-02  0.604485 4.150391e-02     9     1       2 3.271484e-02   1.505567e-01   1.505567e-01 FAIL_TO_REJECT_H0
+                  A3_learned_scheduler_vs_uniform real_lm             zorp_acc     validated_learned   validated_uniform        0.880952      0.885417             12.0 12  -0.004464 -0.036963  0.028034 -0.302345 6.159855e-01 -0.087280 6.796875e-01     3     4       5 8.554688e-01   1.000000e+00   1.000000e+00 FAIL_TO_REJECT_H0
+                       A4_recombination_vs_replay real_lm      composition_acc   validated_recombine              replay        0.875000      0.955729             12.0 12  -0.080729 -0.150779 -0.010679 -2.536526 9.861748e-01 -0.732232 9.902344e-01     1     2       9 9.990234e-01   1.000000e+00   1.000000e+00 FAIL_TO_REJECT_H0
+                              A5_anchor_retention real_lm             mira_acc validated_hard_anchor      validated_hard        0.983507      0.804688             12.0 12   0.178819  0.084212  0.273427  4.160131 7.944987e-04  1.200926 9.765625e-04    10     2       0 9.765625e-04   4.766992e-03   4.766992e-03         REJECT_H0
+                  A6_endogenous_gain_vs_no_update real_lm             zorp_acc        validated_hard           no_update        0.819940      0.825893             12.0 12  -0.005952 -0.078736  0.066831 -0.180002 5.697878e-01 -0.051962 5.061035e-01     7     0       5 3.872070e-01   1.000000e+00   1.000000e+00 FAIL_TO_REJECT_H0
+                       B1_large_vs_small_capacity  memory          path_recall       large_selective     small_selective        0.224444      0.038889              NaN 60   0.185556  0.169147  0.201964 22.628373 4.517593e-31  2.921310 7.914347e-12    60     0       0 8.673617e-19   1.355278e-30   4.065834e-30         REJECT_H0
+              B2_large_vs_small_capacity_with_EAC  memory          path_recall   large_selective_eac small_selective_eac        0.234722      0.033333              NaN 60   0.201389  0.184512  0.218266 23.877262 2.580572e-32  3.082541 7.771117e-12    60     0       0 8.673617e-19   1.032229e-31   2.580572e-31         REJECT_H0
+              B3_selective_vs_random_large_memory  memory       query_accuracy       large_selective        large_random        0.592222      0.559722              NaN 60   0.032500  0.021518  0.043482  5.921824 8.714414e-08  0.764504 1.082900e-06    46     2      12 4.109832e-06   8.714414e-08   6.100090e-07         REJECT_H0
+B4_capacity_enables_more_successful_thought_paths  memory thought_success_rate   large_selective_eac small_selective_eac        0.096528      0.025556              NaN 60   0.070972  0.058850  0.083095 11.714839 2.462388e-17  1.512379 3.394387e-11    55     2       3 1.129929e-13   4.924776e-17   1.969910e-16         REJECT_H0
+
+Interpretation guardrails:
+- Real-LM primary claims are non-interpretable if the prespecified source-competence gate fails.
+- Function approximation is tested as a thought-selection policy, not as proof that cognition must be neural or stochastic.
+- Memory capacity is evaluated under fixed retrieval bandwidth; raw storage size is not equated with intelligence.
+- Verifier pass/fail is evaluative information; do not claim literally zero new information.
